@@ -12,7 +12,8 @@ client.once("ready", () => {
 });
 
 client.on("message", (msg) => {
-	if (msg.content === ".time") countTime(msg);
+	if (msg.content === ".time" && msg.channel.id === "642713531992506369")
+		countTime(msg);
 });
 
 client.on("voiceStateUpdate", (oldMember, newMember) => {
@@ -39,6 +40,8 @@ client.on("voiceStateUpdate", (oldMember, newMember) => {
 const countTime = (msg) => {
 	const userId = msg.author.id;
 	let time = 0;
+	if (!obj.hasOwnProperty(userId)) return;
+
 	for (let i = 0; i < obj[userId].length; i++) {
 		const joined = obj[userId][i].joined;
 		const leave = obj[userId][i].leave;
