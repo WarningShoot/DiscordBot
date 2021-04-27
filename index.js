@@ -2,8 +2,7 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const fs = require("fs");
 
-const json = require("./data.json");
-const obj = json;
+const obj = require("./data.json");
 
 const client = new Discord.Client();
 
