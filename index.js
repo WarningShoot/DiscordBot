@@ -31,7 +31,7 @@ client.on("voiceStateUpdate", (oldMember, newMember) => {
 		//leave
 		obj[userId][0].leave = new Date();
 		const newJSON = JSON.stringify(obj);
-		fs.writeFile("data.json", newJSON, "utf8", (err) => {
+		fs.writeFile("./data.json", newJSON, "utf8", (err) => {
 			if (err) return console.log(err);
 		});
 	}
