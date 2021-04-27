@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Discord = require("discord.js");
 const fs = require("fs");
 
@@ -38,4 +39,4 @@ client.on("voiceStateUpdate", (oldMember, newMember) => {
 	console.log(obj);
 });
 
-client.login("ODM0NTQ3NzMyNjQ3MTE2ODMw.YICfJA.smnVq9BpKa5xR1XRlKiunL39tNA");
+client.login(process.env.DISCORD_TOKEN);
